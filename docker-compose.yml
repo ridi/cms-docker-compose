@@ -1,0 +1,58 @@
+version: '2'
+
+services:
+  haproxy:
+    image: haproxy:1.7
+    volumes:
+      - ./docker/haproxy/config:/usr/local/etc/haproxy
+    ports:
+      - 80:80
+    networks:
+      default:
+        aliases:
+          - haproxy
+
+  mariadb:
+    image: mariadb:10.3
+    volumes:
+      - ./docker/mariadb/data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ridi
+      MYSQL_USER: ridi
+      MYSQL_PASSWORD: ridi
+      MYSQL_DATABASE: cms
+    networks:
+      default:
+        aliases:
+          - mariadb
+
+  main:
+    image: ridibooks/cms:latest
+    ports:
+      - 0:80
+    env_file:
+      - ./docker/cms/.env
+    networks:
+      default:
+        aliases:
+          - cms_main
+
+  admin:
+    image: ridibooks/cms-admin:latest
+    ports:
+      - 0:80
+    env_file:
+      - ./docker/cms-admin/.env
+    networks:
+      default:
+        aliases:
+          - cms_admin
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.16.0.0/24

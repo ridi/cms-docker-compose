@@ -1,0 +1,9 @@
+{
+    "name": "ridibooks/cms-docker",
+    "description": "RIDI CMS docker enviroment",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "robmorgan/phinx": "^0.8.1"
+    }
+}
