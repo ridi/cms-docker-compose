@@ -7,8 +7,11 @@ db-migrate:
 	vendor/bin/phinx migrate
 	vendor/bin/phinx seed:run
 
-cms-up:
-	docker-compose up
+up:
+	docker-compose up -d
 
-cms-down:
+down:
 	docker-compose down
+
+log:
+	docker-compose logs --follow
