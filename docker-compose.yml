@@ -4,9 +4,12 @@ services:
   haproxy:
     image: haproxy:1.7
     volumes:
-      - ./docker/haproxy/config:/usr/local/etc/haproxy
+      - ./docker/haproxy:/usr/local/etc/haproxy
     ports:
       - 80:80
+      - 9000:9000
+    env_file:
+      - .env
     networks:
       default:
         aliases:
@@ -29,7 +32,7 @@ services:
           - mariadb
 
   main:
-    image: ridibooks/cms:latest
+    image: ridibooks/cms:2.x
     ports:
       - 0:80
     env_file:
