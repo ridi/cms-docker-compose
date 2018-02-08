@@ -7,6 +7,7 @@ services:
       - ./docker/haproxy:/usr/local/etc/haproxy
     ports:
       - 80:80
+      - 443:443
       - 9001:9001
     env_file:
       - .env
