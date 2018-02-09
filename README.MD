@@ -16,3 +16,9 @@ If you build a new service for the CMS, it should be bound to the haproxy. The d
 1. `make db-migrate` for sample db migration. If it fails, try again in a few seconds.
 1. Run your CMS service app at the port and path described in `.env`.
 1. `make down` for shutting down the containers.
+
+## (Optional)HTTPS
+
+Add `docker/haproxy/ssl.merge` into your keychain and make it trusted.
+Add `127.0.0.1 admin.ridibooks.com` in /etc/hosts
+open https://admin.ridibooks.com in the browser.
