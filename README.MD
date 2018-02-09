@@ -19,6 +19,6 @@ If you build a new service for the CMS, it should be bound to the haproxy. The d
 
 ## (Optional)HTTPS
 
-Add `docker/haproxy/ssl.merge` into your keychain and make it trusted.
-Add `127.0.0.1 admin.ridibooks.com` in /etc/hosts
-open https://admin.ridibooks.com in the browser.
+1. Add `docker/haproxy/ssl.merge` into your keychain and make it trusted.
+1. Add `127.0.0.1 admin.ridibooks.com` in /etc/hosts
+1. open https://admin.ridibooks.com in the browser.
