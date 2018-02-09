@@ -2,9 +2,7 @@
 
 install:
 	composer install
-	@if [[ ! -f .env ]]; then \
-		cp .env.sample .env; \
-	fi
+	cp -n .env.sample .env;
 
 db-migrate:
 	vendor/bin/phinx migrate
