@@ -2,7 +2,7 @@
 
 install:
 	composer install
-	cp -n .env.sample .env;
+	cp -n -v .env.sample .env || true # Surpress returning error on existing destination.
 
 db-migrate:
 	vendor/bin/phinx migrate
