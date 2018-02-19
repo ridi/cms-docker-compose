@@ -16,28 +16,13 @@ services:
         aliases:
           - haproxy
 
-  mariadb:
-    image: mariadb:10.3
-    volumes:
-      - ./docker/mariadb/data:/var/lib/mysql
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: ridi
-      MYSQL_USER: ridi
-      MYSQL_PASSWORD: ridi
-      MYSQL_DATABASE: cms
-    networks:
-      default:
-        aliases:
-          - mariadb
-
   main:
     image: ridibooks/cms:2.x
     ports:
       - 0:80
     env_file:
       - ./docker/cms/.env
+      - .env
     networks:
       default:
         aliases:
@@ -49,6 +34,7 @@ services:
       - 0:80
     env_file:
       - ./docker/cms-admin/.env
+      - .env
     networks:
       default:
         aliases:

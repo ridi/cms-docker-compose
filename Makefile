@@ -9,10 +9,10 @@ db-migrate:
 	vendor/bin/phinx seed:run
 
 up:
-	docker-compose up -d
+	docker-compose -f docker-compose.yml -f docker-compose.db.yml up -d
 
 down:
-	docker-compose down
+	docker-compose  -f docker-compose.yml -f docker-compose.db.yml down
 
 log:
 	docker-compose logs --follow

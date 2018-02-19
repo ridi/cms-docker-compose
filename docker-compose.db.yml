@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  mariadb:
+    image: mariadb:10.3
+    volumes:
+      - ./docker/mariadb/data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ridi
+      MYSQL_USER: ridi
+      MYSQL_PASSWORD: ridi
+      MYSQL_DATABASE: cms
+    networks:
+      default:
+        aliases:
+          - mariadb
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.16.0.0/24
