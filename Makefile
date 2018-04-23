@@ -16,3 +16,7 @@ down:
 
 log:
 	docker-compose logs --follow
+
+pull:
+	docker pull ridibooks/cms:2.x
+	docker pull ridibooks/cms-admin:latest
