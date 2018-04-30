@@ -9,6 +9,7 @@ class UserMenu extends AbstractSeed
         $menus = $this->fetchAll('
             select *
             from tb_admin2_menu
+            where tb_admin2_menu.menu_url like "/super%"
         ');
 
         $user_menus = $this->table('tb_admin2_user_menu');
