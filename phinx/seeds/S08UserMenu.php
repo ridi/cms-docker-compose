@@ -2,7 +2,7 @@
 
 use Phinx\Seed\AbstractSeed;
 
-class UserMenu extends AbstractSeed
+class S08UserMenu extends AbstractSeed
 {
     public function run()
     {

@@ -2,7 +2,7 @@
 
 use Phinx\Seed\AbstractSeed;
 
-class User extends AbstractSeed
+class S03User extends AbstractSeed
 {
     public function run()
     {

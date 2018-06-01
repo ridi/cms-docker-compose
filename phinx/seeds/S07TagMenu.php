@@ -2,7 +2,7 @@
 
 use Phinx\Seed\AbstractSeed;
 
-class TagMenu extends AbstractSeed
+class S07TagMenu extends AbstractSeed
 {
     public function run()
     {
