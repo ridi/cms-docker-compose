@@ -17,7 +17,7 @@ services:
           - haproxy
 
   main:
-    image: ridibooks/cms:2.x
+    image: ridibooks/cms:latest
     ports:
       - 0:80
     env_file:
